@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <!-- DataTables JS -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,23 +35,15 @@
         table.dataTable tbody tr:hover {
             background-color: #f5f5f5;
         }
-        table.dataTable thead th {
-            border-bottom: none;
-        }
         .btn {
             display: inline-block;
             padding: 6px 12px;
-            margin-bottom: 0;
             font-size: 14px;
             font-weight: normal;
-            line-height: 1.42857143;
             text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
             cursor: pointer;
             border: 1px solid transparent;
             border-radius: 4px;
-            user-select: none;
             text-decoration: none;
             margin-right: 5px;
         }
@@ -148,24 +142,26 @@
     <div class="container">
         <h2>Lista de Usuarios</h2>
         <button class="btn btn-create" onclick="openCreateModal()">Crear Nuevo Usuario</button>
-        <table id="usuariosTable" class="display">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Domicilio</th>
-                    <th>Email</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Patente</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Cuerpo de la tabla se llenará mediante JavaScript -->
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table id="usuariosTable" class="display table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Domicilio</th>
+                        <th>Email</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Patente</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cuerpo de la tabla se llenará mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Modal para editar usuario -->
@@ -255,7 +251,8 @@
         </div>
     </div>
 
-    
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/usuarios.js') }}"></script>
 </body>
 </html>
