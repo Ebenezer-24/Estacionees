@@ -65,14 +65,17 @@ public function store(Request $request)
         return response()->json(['message' => 'Error al realizar la recarga.'], 500);
     }
 }
-    public function show($id)
-    {
-        $recarga = Recarga::with('comercio')->find($id);
+public function show($id)
+{
+    $recarga = Recarga::with('comercio')->find($id);
 
-        if (!$recarga) {
-            return response()->json(['message' => 'Recarga no encontrada'], 404);
-        }
-
-        return response()->json($recarga);
+    if (!$recarga) {
+        return response()->json(['message' => 'Recarga no encontrada'], 404);
     }
+
+    return response()->json([
+        'recarga' => $recarga,
+        'comercio' => $recarga->comercio
+    ]);
+}
 }

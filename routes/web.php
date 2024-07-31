@@ -13,3 +13,7 @@ Route::get('/estacionamientos', function () {
 Route::get('/comercios', function () {
     return view('comercio.index');
 });
+
+Route::get('/recargas', function () {
+    return view('recargas.index');
+});
